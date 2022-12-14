@@ -1,0 +1,287 @@
+/*--------General style-----------*/
+/* body */
+body {
+    margin: 0%; /*makes page display full size of browser */
+}
+
+/* heading 1 elements */
+h1 {
+    text-transform: uppercase; /*capitalize h1*/
+    font-family: "Trebuchet MS", Optima; /*sets h1 font*/
+    text-align: center;
+    margin-top: 3%; /*adds margin above h1*/
+    color: #1a1a1a;
+}
+
+/* h1 hover effect */
+h1:hover {
+    filter: grayscale(5%); /*makes heading grey when hovered*/
+    transform: scale(1.1); /*increases size on hover*/
+    transition: transform 1s; /*transformation speed*/
+}
+
+/*portfolio text style*/
+.white-text {
+    color: #fff;
+}
+
+/*paragraph style*/
+p{
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify;
+    letter-spacing: 1px; /*expands text*/
+    font-size: 20px;
+    padding-left: 02px; /*left padding*/
+    padding-right: 20px/*right padding*/
+}
+
+/* P hover effects*/
+p:hover {
+    transition: transform 1s;
+    transform: scale(1.01);  /*increase text size on hover */
+}
+
+/* center class style */
+.center {
+    text-align: center;
+}
+
+/* center class hover effects */
+.center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
+/*anchor element style*/
+a {
+    color: blue; /*makes links blue*/
+}
+
+/*quotation element*/
+q {
+    font-style: italic;
+}
+
+/*image elaments*/
+img {
+    filter: grayscale(75%); /*make image 75% gray*/
+    border-radius: 8px; /*rounded corners*/
+    max-width: 100%;
+    height: 340px;
+    display: block; /*makes image centerable*/
+    margin-left: auto;
+    margin-right: auto;/*centers image*/
+}
+
+/*image hover effect*/
+img:hover {
+    filter: grayscale(5%); /*returns color on hover*/
+    transition: transform 1s; /* 1 second transition */
+    transform: scale(1.1);/*increase size on hover*/
+}
+
+/* the @media rule changes image size and alignment based on screen size
+on screens 576px or smaler images will be 100px and vertical centered in the column*/
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+/*Styling for footer*/
+footer {
+    padding: 2%;
+    background-color: white;
+}
+/* END OF GENERAL STYLE  */
+
+/*  NAVBAR STYLING  */
+.Navbar {
+    overflow: hidden;  /*hides overflow text */
+    background-color: black; /*sets navbar color */
+    position: fixed; /*keep sbar at top of screen while scrolling */
+    top: 0; /* no space above bar on page  */
+    width: 100%;
+    z-index: 1; /* makes sure other text doesnt overlap navbar */
+    -webkit-animation: moveNav 5s; /* applies animation to safari 4.0-8.0 browsers */
+    animation: moveNav 5s; /* applies animation to other browsers */
+}
+
+/* moveNav animation effect */
+@keyframes moveNav {
+    from {left: -100vw;} /* makes nav bar start off-screen */
+    to {left: 0vw;} /* sets final position of nav bar */
+}
+
+/* NAVBAR LINKS */
+.Navbar a {
+    float: left; /* navbar text 0on left side */
+    display: block;
+    color: white;
+    padding: 14px 16px; /*added padding around text */
+    text-decoration: none;  /* removes underlines from links on nav bar */
+    font-family: Avant Garde, Helvetica; /*selection of font */
+    font-size: 20px;
+    text-align: center;
+    position: relative; /* sets text relative to enable animation feature */
+    -webkit-animation: moveNavText 5.75s; /* animation for safari browser */
+    animation: moveNavText 5.75s; /* 5.75s animation effect */ 
+}
+
+/* moveNavText animation effect for moving nav text above view to navbar*/
+@keyframes moveNavText {
+    from {top: 100vw;} /* hides nav bar text initially */
+    to {top: 0vw;} /*final position of nav text */
+}
+
+/* screens 576px and smaller will display nav links equally distributed */
+@media screen and (max-width: 576px) {
+    .Navbar a {
+        width:25%; /*makes each link in navbar 1/4 of the bar */
+        font-size: 12px;
+    }
+}
+
+/* navbar hover effects */
+.Navbar a:hover {
+    background-color: #f4f4f4; /*sets bg color on hover */
+    color: black; /*text color on hover*/
+    font-weight: bold;
+}
+
+/* nav home button */
+.Navbar a.active { /* makes navbar "a" element as "active" class */
+    background-color: darkgray;
+}
+/* end of navbar styling */
+
+/* Video Styling */
+/*formatting for background video*/
+#Typing_Video {
+    position: fixed; /*fixes video to top */
+    right: 0;
+    bottom: 0; /*these 2 ensure spacing on page */
+    min-width: 100%; /*makes full width of screen */
+    z-index: -1; /* puts text over video */
+}
+
+/* screens that are 576px or smaller will not show the video */
+@media screen and (max-width: 576px) {
+    #Typing_Video {
+        display: none;
+    }
+}
+
+/* text over video */
+.Video_Text {
+    background: rgba(0, 0, 0, 0.5); /* semi transparent background for text */
+    color: white;
+    width: 100%;
+    padding: 20x;
+    position: relative;
+    -webkit-animation: moveVideoText 5.75s;
+    animation: moveVideoText 5.75s; /* sets animation speed */
+}
+
+/* this animation effect causes overlay video text to move up on load */
+@keyframes moveVideoText {
+    from {top: -100vw}
+    to {top: 0vw;} /*moves text to final position */
+}
+/* end of video style*/
+
+/*  TABLE STYLING */
+* { /* asterix applies effect to all elements of the page */
+    box-sizing: border-box; /* creates box within a border to place text */
+}
+
+.Column_1 {
+    float: left; /* makes column half the page */
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px; /* column height may need adjusted based on amount of text */
+    background-color: #f2f2f2;
+}
+
+/*screens 576px and smaller will display a scrollbar if text overflows column */
+@media screen and (max-width: 576px) {
+    .Column_1 {
+        overflow: auto;
+    }
+} 
+
+.Column_2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+    background-color: #4d4d4d;
+}
+
+/* this class is for columns in the final row, overrides height for contact form, keeping style from col1 and 2 */
+.Column_tall {
+    padding-top: 3.5%;
+    height: 450px;
+}
+
+/* insert something after the Row element */
+.Row:after {
+    content: ""; /* uncovers footer- allows it to display */
+    display: table; /* specifies to display as a table */
+    clear: both; /* stops elements from floating on the side of an element */
+}
+/* END OF TABLE STYLE */
+
+/* CONTACT FORM STYLING */
+/* input[type=text] targets all text input sections of form */
+input[type=text] {
+    width: 100%; /*makes input box full width of container */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* creates a bordered box around input feilds */
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical; /* allows for vertical resize of boxes */
+    font-family: Perpetua, Rockwell Extra Bold;
+}
+
+/* hover effects for input boxes */
+input[type=text]:hover {
+    box-shadow: 0 0 5px red inset;
+}
+
+/* submit button */
+input[type=submit] {
+    background-color: black; /* sets bg color of submit button */
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none; /* removes border from submit button */
+    border-radius: 4px; /* rounded corners */
+    cursor: pointer; /* changes cursor to pointer */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Perpetua, Rockwell Extra Bold;
+}
+
+/* hover effect for submit button */
+input[type=submit]:hover {
+    background-color: white;
+    color: black; /* black text on hover */
+    transform: scale(1.5s);
+    transition: transform 1.5s;
+}
+
+/* form element */
+form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-family: "Trebuchet MS", Optima;
+}
+/* END OF CONTACT FOR STYLING */
